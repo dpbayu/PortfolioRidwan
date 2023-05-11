@@ -16,7 +16,7 @@ body {
     background-color: #f4f4f4;
 }
 
-.content {
+.main {
     padding: 75px 100px;
 }
 
@@ -97,6 +97,10 @@ body {
 .section-4 {
     margin: 100px 0;
     padding: 0 100px;
+}
+
+.section-4 .content {
+    position: relative;
 }
 
 .section-4 .title {

@@ -1,9 +1,239 @@
-@media (max-width:425px) {
-    .content {
+/* Width 2560px */
+@media (max-width:2560px) {
+    .main {
         padding: 75px 0;
         width: 100%;
     }
 
+    /* Section-2 */
+    .section-2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .section-2 .content-about-1 {
+        max-width: 1440px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .section-2 .content-about-2 {
+        max-width: 1440px;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+    }
+
+    .section-2 .content-about-2 .description {
+        width: 75%;
+        margin: 50px 0;
+    }
+
+    .section-2 .content-about-2 .description p {
+        margin: 0;
+        font-size: 18px;
+    }
+
+    /* Section-3 */
+    .section-3 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .section-3 .content-resume {
+        width: 1440px;
+    }
+
+    .section-3 img {
+        width: 33%;
+    }
+
+    /* Section-4 */
+    .section-4 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .section-4 .content-contact {
+        width: 1440px;
+        position: relative;
+    }
+
+    /* Section-5 */
+    .section-5 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .section-5 .content-5 {
+        margin-top: 50px;
+        width: 1440px;
+    }
+
+    .section-5 .content-5 p {
+        font-size: 144px;
+        margin-bottom: 0;
+    }
+}
+
+/* Width 2560px */
+@media (max-width:1440px) {
+
+    /* Section 2 */
+    .section-2 .title p {
+        font-size: 56px;
+        width: 550px;
+    }
+
+    .section-2 .img-about-1 {
+        margin: 0;
+    }
+}
+
+/* Width 1024px */
+@media (max-width:1024px) {
+    .main {
+        padding: 75px 0;
+        width: 100%;
+    }
+
+    /* Section 1 */
+    .section-1 h1 {
+        margin-top: -50px;
+        font-size: 125px;
+    }
+
+    /* Section 2 */
+    .section-2 {
+        margin: 50px;
+        padding: 0;
+    }
+
+    .section-2 .content-about-1 {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .section-2 .content-about-2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        width: 100%;
+        gap: 25%;
+    }
+
+    .section-2 .img-about-1 {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .section-2 .title {
+        margin: 25px 0;
+        width: 100%;
+    }
+
+    .section-2 .title p {
+        font-size: 56px;
+        width: 100%;
+    }
+
+    .section-2 .description {
+        margin: 25px 0;
+        width: 50%;
+    }
+
+    .section-2 .description p {
+        margin: 0;
+        font-size: 18px;
+        width: 100%;
+    }
+
+    /* Section 3 */
+    .section-3 {
+        margin: 50px;
+        padding: 0;
+    }
+
+    .section-3 .fs-1 {
+        text-align: center;
+    }
+
+    .section-3 .img-about-2 {
+        height: 100%;
+    }
+
+    /* Section 4 */
+    .section-4 {
+        margin: 50px;
+        padding: 0;
+    }
+
+    .section-4 .content {
+        height: 50vw;
+    }
+
+    .section-4 .fs-1 {
+        text-align: center;
+    }
+
+    .section-4 .img-contact {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .section-4 img {
+        position: relative;
+        top: 0;
+        right: 0;
+    }
+
+    .section-4 .contact-content {
+        display: flex;
+        flex-direction: row;
+    }
+
+    /* Section 5 */
+    .section-5 {
+        margin: 50px;
+        padding: 0;
+    }
+
+    .section-5 .content-5 p {
+        font-size: 96px;
+        margin-bottom: 0;
+    }
+
+    .section-5 .content-5 img {
+        width: 100%;
+    }
+}
+
+/* Width 768px */
+@media (max-width:768px) {
+    /* Section 5 */
+    .section-5 .content-5 p {
+        font-size: 72px;
+        margin-bottom: 0;
+    }
+
+    .section-5 .content-5 img {
+        height: 10%;
+        width: 25%;
+    }
+}
+
+/* Width 425px */
+@media (max-width:425px) {
+
+    /* Section 1 */
     .section-1 img {
         width: 75%;
     }
@@ -26,17 +256,8 @@
     }
 
     .section-2 .title p {
-        font-size: 24px;
+        font-size: 18px;
         width: 70%;
-    }
-
-    .section-2 .img-about-1 {
-        margin: 0;
-        width: 100%;
-    }
-
-    .section-2 .fs-1 {
-        text-align: center;
     }
 
     .section-2 .img-about-2 {
@@ -44,14 +265,10 @@
         width: 100%;
     }
 
-    .section-2 .description {
+    .section-2 .content-about-2 .description {
         width: 100%;
-    }
-
-    .section-2 .description p {
-        margin: 0;
-        font-size: 18px;
-        width: 100%;
+        margin-top: 0;
+        margin-bottom: 25px;
     }
 
     /* Section-3 */
@@ -65,12 +282,12 @@
         width: 100%;
     }
 
-    .section-3 .fs-1 {
-        text-align: center;
-    }
-
     .section-3 .text {
         font-size: 18px;
+    }
+
+    .section-3 img {
+        width: 100%;
     }
 
     /* Section-4 */
@@ -88,26 +305,18 @@
         width: 100%;
     }
 
-    .section-4 .fs-1 {
-        text-align: center;
-    }
-
     .section-4 .contact p {
         font-size: 18px;
         width: 100%;
     }
 
-    .section-4 img {
-        margin: 25px 0;
-        position: relative;
-        right: 0;
-        width: 100%;
-    }
-
     /* Section 5 */
     .section-5 {
-        padding: 0;
+        padding: 0 25px;
         margin: 0;
+    }
+    .section-5 .content-5 {
+        width: 100%;
     }
 
     .section-5 p {
@@ -115,11 +324,11 @@
     }
 
     .section-5 p.text {
-        font-size: 40px;
+        font-size: 32px;
     }
 
     .section-5 p.text-2 {
-        font-size: 40px;
+        font-size: 32px;
     }
 
     .section-5 img {
