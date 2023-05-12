@@ -8,7 +8,6 @@
 <!-- PHP -->
 <!doctype html>
 <html lang="en">
-
 <!-- Head Start -->
 <?php require 'partials/head.php' ?>
 <!-- Head End -->
