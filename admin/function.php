@@ -7,7 +7,7 @@ if (isset($_POST['editHome'])) {
     $home_name = mysqli_real_escape_string($db,$_POST['home_name']);
     $home_img = $_FILES['home_img']['name'];
     $imgtemp = $_FILES['home_img']['tmp_name'];
-    if ($imgtemp=='') {
+    if ($imgtemp == '') {
         $q = "SELECT * FROM tbl_home WHERE 1";
         $r = mysqli_query($db,$q);
         $d = mysqli_fetch_array($r);
@@ -21,4 +21,33 @@ if (isset($_POST['editHome'])) {
     }
 }
 // Update Home End
+// Update About Start
+if (isset($_POST['editAbout'])) {
+    $about_title = mysqli_real_escape_string($db,$_POST['about_title']);
+    $about_desc = mysqli_real_escape_string($db,$_POST['about_desc']);
+    $about_img1 = $_FILES['about_img1']['name'];
+    $imgtemp1 = $_FILES['about_img1']['tmp_name'];
+    if ($imgtemp1 == '') {
+        $sql_img1 = "SELECT * FROM tbl_about WHERE 1";
+        $query_sql = mysqli_query($db,$sql_img1);
+        $fetch_img1 = mysqli_fetch_array($query_sql);
+        $about_img1 = $fetch_img1['about_img1'];
+    }
+    move_uploaded_file($imgtemp1,"../assets/img/$about_img1");
+    $about_img2 = $_FILES['about_img2']['name'];
+    $imgtemp2 = $_FILES['about_img2']['tmp_name'];
+    if ($imgtemp2 == '') {
+        $sql_img2 = "SELECT * FROM tbl_about WHERE 1";
+        $query_sq2 = mysqli_query($db,$sql_img2);
+        $fetch_img2 = mysqli_fetch_array($query_sq2);
+        $about_img2 = $fetch_img2['about_img2'];
+    }
+    move_uploaded_file($imgtemp2,"../assets/img/$about_img2");
+    $query = "UPDATE tbl_about SET about_title = '$about_title', about_desc = '$about_desc', about_img1 = '$about_img1', about_img2 = '$about_img2' WHERE id = 1";
+    $run = mysqli_query($db,$query);
+    if ($run) {
+        echo "<script>document.location.href = 'about.php?success=Succesfully updated!';</script>";
+    }
+}
+// Update About End
 ?>

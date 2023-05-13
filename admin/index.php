@@ -32,7 +32,7 @@ $home = mysqli_fetch_array($query_home);
       <!-- Page Header Start -->
       <div class="content-header">
         <div class="container-fluid">
-          <h1 class="m-0">Dashboard</h1>
+          <h1 class="m-0">Home</h1>
         </div>
       </div>
       <!-- Page Header End -->
@@ -85,7 +85,7 @@ $home = mysqli_fetch_array($query_home);
     </div>
     <!-- Content Wrapper End -->
     <footer class="main-footer">
-      <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">Dwi Putra Bayu</a>.</strong>
+      <strong>Copyright &copy; 2014-2021 <a href="https://github.com/dpbayu" target="_blank">Dwi Putra Bayu</a>.</strong>
       All rights reserved.
     </footer>
   </div>
