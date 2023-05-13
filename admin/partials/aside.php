@@ -24,13 +24,13 @@
                 <li class="nav-item">
                     <a href="index.php" class="nav-link active">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>Dashboard</p>
+                        <p>Home</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>Dashboard</p>
+                    <a href="about.php" class="nav-link">
+                        <i class="nav-icon fas fa-address-card"></i>
+                        <p>About</p>
                     </a>
                 </li>
                 <li class="nav-header">EXAMPLES</li>
