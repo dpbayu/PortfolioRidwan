@@ -90,8 +90,8 @@ $about = mysqli_fetch_array($query_about);
                                     </div>
                                 </div>
                             </div>
+                            <button type="submit" name="editAbout" class="btn btn-primary">Update About</button>
                         </div>
-                        <button type="submit" name="editAbout" class="btn btn-primary">Edit</button>
                     </form>
                 </div>
             </section>

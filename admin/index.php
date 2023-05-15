@@ -88,8 +88,8 @@ $home = mysqli_fetch_array($query_home);
                   <input type="file" class="form-control" name="resume_img">
                 </div>
               </div>
+              <button type="submit" name="editHome" class="btn btn-primary">Update Home</button>
             </div>
-            <button type="submit" name="editHome" class="btn btn-primary">Edit</button>
           </form>
         </div>
       </section>

@@ -73,8 +73,8 @@ $profile = mysqli_fetch_array($query_profile);
                                 <label class="form-label" for="password">Password</label>
                                 <input class="form-control" type="password" id="password" name="password">
                             </div>
+                            <button type="submit" name="editProfile" class="btn btn-primary">Update Profile</button>
                         </div>
-                        <button type="submit" name="editProfile" class="btn btn-primary">Update</button>
                     </form>
                 </div>
             </section>

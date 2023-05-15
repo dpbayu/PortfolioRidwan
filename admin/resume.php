@@ -244,8 +244,8 @@ $resume = mysqli_fetch_array($query_resume);
                                 <input type="text" class="form-control" id="resume_desc" name="resume_desc"
                                     placeholder="Enter Description">
                             </div>
+                            <button type="submit" name="addResume" class="btn btn-primary">Add Resume</button>
                         </div>
-                        <button type="submit" name="addResume" class="btn btn-primary">Add</button>
                     </form>
                     <!-- Add Resume End -->
                 </div>
