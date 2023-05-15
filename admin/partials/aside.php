@@ -37,6 +37,12 @@
                         <p>Resume</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="contact.php" class="nav-link <?php if ($page == 'contact'){ echo 'active'; } ?>">
+                        <i class="nav-icon fas fa-phone"></i>
+                        <p>Contact</p>
+                    </a>
+                </li>
                 <li class="nav-header">EXAMPLES</li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">

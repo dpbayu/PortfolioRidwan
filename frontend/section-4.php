@@ -10,13 +10,13 @@
             <div class="col-12">
                 <div class="col-8">
                     <div class="contact">
-                        <p><?= $user['address_contact'] ?></p>
-                        <p><?= $user['phone_contact'] ?></p>
-                        <p><?= $user['email_contact'] ?></p>
+                        <p><?= $user['contact_address'] ?></p>
+                        <p><?= $user['contact_phone'] ?></p>
+                        <p><?= $user['contact_email'] ?></p>
                     </div>
                 </div>
                 <div class="col-4 img-contact">
-                    <img class="mt-3" src="assets/img/ridwan.jpg" alt="Photo Contact">
+                    <img class="mt-3" src="assets/img/<?= $user['contact_img'] ?>" alt="Photo Contact">
                 </div>
             </div>
         </div>

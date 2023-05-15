@@ -1,10 +1,10 @@
 <!-- PHP -->
 <?php
 require '../function.php';
-$page = 'about';
-$sql_about = "SELECT * FROM tbl_about";
-$query_about = mysqli_query($db,$sql_about);
-$about = mysqli_fetch_array($query_about);
+$page = 'contact';
+$sql_contact = "SELECT * FROM tbl_contact";
+$query_contact = mysqli_query($db,$sql_contact);
+$contact = mysqli_fetch_array($query_contact);
 ?>
 <!-- PHP -->
 <!DOCTYPE html>
@@ -32,7 +32,7 @@ $about = mysqli_fetch_array($query_about);
             <!-- Page Header Start -->
             <div class="content-header">
                 <div class="container-fluid">
-                    <h1 class="m-0">About</h1>
+                    <h1 class="m-0">Contact</h1>
                 </div>
             </div>
             <!-- Page Header End -->
@@ -57,36 +57,32 @@ $about = mysqli_fetch_array($query_about);
                             </div>';
                         }
                     ?>
-                    <form action="function.php" method="POST" enctype="multipart/form-data">
+                    <form class="pb-5" action="function.php" method="POST" enctype="multipart/form-data">
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="title">Title About</label>
-                                <input type="text" class="form-control" id="title" name="about_title"
-                                    placeholder="Enter title" value="<?= $about['about_title'] ?>">
+                                <label for="address">Address</label>
+                                <input type="text" class="form-control" id="address" name="contact_address"
+                                    placeholder="Enter address" value="<?= $contact['contact_address'] ?>">
                             </div>
                             <div class="form-group">
-                                <label for="desc">Description About</label>
-                                <input type="text" class="form-control" id="desc" name="about_desc"
-                                    placeholder="Enter description" value="<?= $about['about_desc'] ?>">
+                                <label for="phone">Phone</label>
+                                <input type="text" class="form-control" id="phone" name="contact_phone"
+                                    placeholder="Enter phone" value="<?= $contact['contact_phone'] ?>">
                             </div>
-                            <div class="d-flex gap-5">
-                                <div class="form-group">
-                                    <div class="d-flex flex-column">
-                                        <label for="image">Image 1</label>
-                                        <img class="mb-3" src="../assets/img/<?= $about['about_img1'] ?>" width="500" height="300">
-                                        <input type="file" class="form-control" name="about_img1">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="d-flex flex-column">
-                                        <label for="image">Image 2</label>
-                                        <img class="mb-3" src="../assets/img/<?= $about['about_img2'] ?>" width="200">
-                                        <input type="file" class="form-control" name="about_img2">
-                                    </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="text" class="form-control" id="email" name="contact_email"
+                                    placeholder="Enter email" value="<?= $contact['contact_email'] ?>">
+                            </div>
+                            <div class="form-group">
+                                <div class="d-flex flex-column">
+                                    <label for="image">Image Contact</label>
+                                    <img class="mb-3" src="../assets/img/<?= $contact['contact_img'] ?>" width="300" height="500">
+                                    <input type="file" class="form-control" name="contact_img">
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" name="editAbout" class="btn btn-primary">Edit</button>
+                        <button type="submit" name="editContact" class="btn btn-primary">Edit</button>
                     </form>
                 </div>
             </section>

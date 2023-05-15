@@ -8,13 +8,22 @@ if (isset($_POST['editHome'])) {
     $home_img = $_FILES['home_img']['name'];
     $imgtemp = $_FILES['home_img']['tmp_name'];
     if ($imgtemp == '') {
-        $q = "SELECT * FROM tbl_home WHERE 1";
-        $r = mysqli_query($db,$q);
-        $d = mysqli_fetch_array($r);
-        $home_img = $d['home_img'];
+        $sql_home = "SELECT * FROM tbl_home WHERE 1";
+        $query_home = mysqli_query($db,$sql_home);
+        $fetch_home = mysqli_fetch_array($query_home);
+        $home_img = $fetch_home['home_img'];
     }
     move_uploaded_file($imgtemp,"../assets/img/$home_img");
-    $query = "UPDATE tbl_home SET home_title = '$home_title', home_name = '$home_name', home_img = '$home_img' WHERE id = 1";
+    $resume_img = $_FILES['resume_img']['name'];
+    $imgtemp = $_FILES['resume_img']['tmp_name'];
+    if ($imgtemp == '') {
+        $sql_resume = "SELECT * FROM tbl_home WHERE 1";
+        $query_resume = mysqli_query($db,$sql_resume);
+        $fetch_resume = mysqli_fetch_array($query_resume);
+        $resume_img = $fetch_resume['resume_img'];
+    }
+    move_uploaded_file($imgtemp,"../assets/img/$resume_img");
+    $query = "UPDATE tbl_home SET home_title = '$home_title', home_name = '$home_name', home_img = '$home_img', resume_img = '$resume_img' WHERE id = 1";
     $run = mysqli_query($db,$query);
     if ($run) {
         echo "<script>document.location.href = 'index.php?success=Succesfully updated!';</script>";
@@ -54,17 +63,39 @@ if (isset($_POST['editAbout'])) {
 
 // Add & Edit Resume Start
 if (isset($_POST['addResume'])) {
-    $type_resume = trim(mysqli_real_escape_string($db, $_POST['type_resume']));
-    $org_resume = trim(mysqli_real_escape_string($db, $_POST['org_resume']));
-    $desc_resume = trim(mysqli_real_escape_string($db, $_POST['desc_resume']));
-    mysqli_query($db, "INSERT INTO tbl_resume (id, type_resume, org_resume, desc_resume) VALUES ('', '$type_resume', '$org_resume', '$desc_resume')");
+    $resume_type = trim(mysqli_real_escape_string($db, $_POST['resume_type']));
+    $resume_org = trim(mysqli_real_escape_string($db, $_POST['resume_org']));
+    $resume_desc = trim(mysqli_real_escape_string($db, $_POST['resume_desc']));
+    mysqli_query($db, "INSERT INTO tbl_resume (id, resume_type, resume_org, resume_desc) VALUES ('', '$resume_type', '$resume_org', '$resume_desc')");
         echo "<script>window.location='resume.php?success=Data successfuly added!';</script>";
 } else if (isset($_POST['editResume'])) {
     $id = $_POST['id'];
-    $org_resume = trim(mysqli_real_escape_string($db, $_POST['org_resume']));
-    $desc_resume = trim(mysqli_real_escape_string($db, $_POST['desc_resume']));
-    mysqli_query($db, "UPDATE tbl_resume SET org_resume = '$org_resume', desc_resume = '$desc_resume' WHERE id = '$id'");
+    $resume_org = trim(mysqli_real_escape_string($db, $_POST['resume_org']));
+    $resume_desc = trim(mysqli_real_escape_string($db, $_POST['resume_desc']));
+    mysqli_query($db, "UPDATE tbl_resume SET resume_org = '$resume_org', resume_desc = '$resume_desc' WHERE id = '$id'");
     echo "<script>window.location='resume.php?success=Data successfuly updated!';</script>";
 }
 // Add & Edit Resume End
+
+// Update Home Start
+if (isset($_POST['editContact'])) {
+    $contact_address = mysqli_real_escape_string($db,$_POST['contact_address']);
+    $contact_phone = mysqli_real_escape_string($db,$_POST['contact_phone']);
+    $contact_email = mysqli_real_escape_string($db,$_POST['contact_email']);
+    $contact_img = $_FILES['contact_img']['name'];
+    $imgtemp = $_FILES['contact_img']['tmp_name'];
+    if ($imgtemp == '') {
+        $sql = "SELECT * FROM tbl_contact WHERE 1";
+        $query = mysqli_query($db,$sql);
+        $fetch = mysqli_fetch_array($query);
+        $contact_img = $fetch['contact_img'];
+    }
+    move_uploaded_file($imgtemp,"../assets/img/$contact_img");
+    $query = "UPDATE tbl_contact SET contact_address = '$contact_address', contact_phone = '$contact_phone', contact_email = '$contact_email', contact_img = '$contact_img' WHERE id = 1";
+    $run = mysqli_query($db,$query);
+    if ($run) {
+        echo "<script>document.location.href = 'contact.php?success=Succesfully updated!';</script>";
+    }
+}
+// Update Home End
 ?>

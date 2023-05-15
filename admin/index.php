@@ -71,13 +71,20 @@ $home = mysqli_fetch_array($query_home);
               </div>
               <div class="form-group">
                 <div class="d-flex flex-column">
-                  <label for="image">Image</label>
-                  <img class="mb-3" src="../assets/img/<?= $home['home_img'] ?>" width="200">
+                  <label for="image">Image Home</label>
+                  <img class="mb-3" src="../assets/img/<?= $home['home_img'] ?>" width="500">
                   <input type="file" class="form-control" name="home_img">
                 </div>
               </div>
+              <div class="form-group">
+                <div class="d-flex flex-column">
+                  <label for="image">Image Resume</label>
+                  <img class="mb-3" src="../assets/img/<?= $home['resume_img'] ?>" width="200">
+                  <input type="file" class="form-control" name="resume_img">
+                </div>
+              </div>
             </div>
-            <button type="submit" name="editHome" class="btn btn-primary">Submit</button>
+            <button type="submit" name="editHome" class="btn btn-primary">Edit</button>
           </form>
         </div>
       </section>

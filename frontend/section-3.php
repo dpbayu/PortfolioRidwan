@@ -19,12 +19,12 @@
                                 $sql_fulltime = "SELECT * FROM tbl_resume";
                                 $query_fulltime = mysqli_query($db,$sql_fulltime);
                                 while ($fulltime = mysqli_fetch_array($query_fulltime)) {
-                                if ($fulltime['type_resume'] == 'ft') {
+                                if ($fulltime['resume_type'] == 'ft') {
                             ?>
                             <li>
                                 <div>
-                                    <h6 class="text mb-1"><?= $fulltime['org_resume'] ?></h6>
-                                    <p><?= $fulltime['desc_resume'] ?></p>
+                                    <h6 class="text mb-1"><?= $fulltime['resume_org'] ?></h6>
+                                    <p><?= $fulltime['resume_desc'] ?></p>
                                 </div>
                             </li>
                             <?php
@@ -44,12 +44,12 @@
                                 $sql_freelance = "SELECT * FROM tbl_resume";
                                 $query_freelance = mysqli_query($db,$sql_freelance);
                                 while ($freelance = mysqli_fetch_array($query_freelance)) {
-                                if ($freelance['type_resume'] == 'fr') {
+                                if ($freelance['resume_type'] == 'fr') {
                             ?>
                             <li>
                                 <div>
-                                    <h6 class="text mb-1"><?= $freelance['org_resume'] ?></h6>
-                                    <p><?= $freelance['desc_resume'] ?></p>
+                                    <h6 class="text mb-1"><?= $freelance['resume_org'] ?></h6>
+                                    <p><?= $freelance['resume_desc'] ?></p>
                                 </div>
                             </li>
                             <?php
@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <!-- Freelance End -->
-                <img class="col-12 col-sm-4" src="assets/img/<?= $user['img_resume'] ?>" alt="Photo About">
+                <img class="col-12 col-sm-4" src="assets/img/<?= $user['resume_img'] ?>" alt="Photo About">
             </div>
         </div>
     </div>

@@ -2,7 +2,7 @@
 <?php
 require '../function.php';
 $page = 'resume';
-$sql_resume = "SELECT * FROM tbl_resume";
+$sql_resume = "SELECT * FROM tbl_home, tbl_resume";
 $query_resume = mysqli_query($db,$sql_resume);
 $resume = mysqli_fetch_array($query_resume);
 ?>
@@ -67,12 +67,12 @@ $resume = mysqli_fetch_array($query_resume);
                                         $sql_fulltime = "SELECT * FROM tbl_resume";
                                         $query_fulltime = mysqli_query($db,$sql_fulltime);
                                         while ($fulltime = mysqli_fetch_array($query_fulltime)) {
-                                        if ($fulltime['type_resume'] == 'ft') {
+                                        if ($fulltime['resume_type'] == 'ft') {
                                     ?>
                                     <li>
                                         <div>
-                                            <h6 class="text mb-1"><?= $fulltime['org_resume'] ?></h6>
-                                            <p><?= $fulltime['desc_resume'] ?></p>
+                                            <h6 class="text mb-1"><?= $fulltime['resume_org'] ?></h6>
+                                            <p><?= $fulltime['resume_desc'] ?></p>
                                             <button type="button" class="btn btn-warning" data-bs-toggle="modal"
                                                 data-bs-target="#editFulltime<?= $fulltime['id'] ?>">
                                                 Edit
@@ -104,18 +104,18 @@ $resume = mysqli_fetch_array($query_resume);
                                                             <div class="form-group mb-3 w-100">
                                                                 <input type="hidden" class="form-control" name="id"
                                                                     value="<?= $fulltime['id'] ?>">
-                                                                <label class="form-label" for="org_resume">Organization
+                                                                <label class="form-label" for="resume_org">Organization
                                                                     Name</label>
-                                                                <input class="form-control" type="text" id="org_resume"
-                                                                    name="org_resume" placeholder="Organization Name"
-                                                                    value="<?= $fulltime['org_resume'] ?>">
+                                                                <input class="form-control" type="text" id="resume_org"
+                                                                    name="resume_org" placeholder="Organization Name"
+                                                                    value="<?= $fulltime['resume_org'] ?>">
                                                             </div>
                                                             <div class="form-group mb-3 w-100">
-                                                                <label class="form-label" for="desc_resume">Description
+                                                                <label class="form-label" for="resume_desc">Description
                                                                     Resume</label>
-                                                                <input class="form-control" type="text" id="desc_resume"
-                                                                    name="desc_resume" placeholder="Description Resume"
-                                                                    value="<?= $fulltime['desc_resume'] ?>">
+                                                                <input class="form-control" type="text" id="resume_desc"
+                                                                    name="resume_desc" placeholder="Description Resume"
+                                                                    value="<?= $fulltime['resume_desc'] ?>">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -147,12 +147,12 @@ $resume = mysqli_fetch_array($query_resume);
                                 $sql_freelance = "SELECT * FROM tbl_resume";
                                 $query_freelance = mysqli_query($db,$sql_freelance);
                                 while ($freelance = mysqli_fetch_array($query_freelance)) {
-                                if ($freelance['type_resume'] == 'fr') {
+                                if ($freelance['resume_type'] == 'fr') {
                                     ?>
                                     <li>
                                         <div>
-                                            <h6 class="text mb-1"><?= $freelance['org_resume'] ?></h6>
-                                            <p><?= $freelance['desc_resume'] ?></p>
+                                            <h6 class="text mb-1"><?= $freelance['resume_org'] ?></h6>
+                                            <p><?= $freelance['resume_desc'] ?></p>
                                             <button type="button" class="btn btn-warning" data-bs-toggle="modal"
                                                 data-bs-target="#editFreelance<?= $freelance['id'] ?>">
                                                 Edit
@@ -184,18 +184,18 @@ $resume = mysqli_fetch_array($query_resume);
                                                             <div class="form-group mb-3 w-100">
                                                                 <input type="hidden" class="form-control" name="id"
                                                                     value="<?= $freelance['id'] ?>">
-                                                                <label class="form-label" for="org_resume">Organization
+                                                                <label class="form-label" for="resume_org">Organization
                                                                     Name</label>
-                                                                <input class="form-control" type="text" id="org_resume"
-                                                                    name="org_resume" placeholder="Organization Name"
-                                                                    value="<?= $freelance['org_resume'] ?>">
+                                                                <input class="form-control" type="text" id="resume_org"
+                                                                    name="resume_org" placeholder="Organization Name"
+                                                                    value="<?= $freelance['resume_org'] ?>">
                                                             </div>
                                                             <div class="form-group mb-3 w-100">
-                                                                <label class="form-label" for="desc_resume">Description
+                                                                <label class="form-label" for="resume_desc">Description
                                                                     Resume</label>
-                                                                <input class="form-control" type="text" id="desc_resume"
-                                                                    name="desc_resume" placeholder="Description Resume"
-                                                                    value="<?= $freelance['desc_resume'] ?>">
+                                                                <input class="form-control" type="text" id="resume_desc"
+                                                                    name="resume_desc" placeholder="Description Resume"
+                                                                    value="<?= $freelance['resume_desc'] ?>">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -218,26 +218,25 @@ $resume = mysqli_fetch_array($query_resume);
                             </div>
                         </div>
                         <!-- Freelance End -->
-                        <img class="col-12 col-sm-4" src="../assets/img/<?= $resume['img_resume'] ?>" alt="Photo About">
                     </div>
                     <!-- Add Resume Start -->
-                    <form action="function.php" method="POST" enctype="multipart/form-data">
+                    <form action="function.php" method="POST">
                         <div class="card-body">
                             <div class="form-group">
                                 <label>Select Type</label><br>
-                                <select name="type_resume" class="form-control">
+                                <select name="resume_type" class="form-control">
                                     <option value="ft">Full Time</option>
                                     <option value="fr">Freelance</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="org_resume">Name Organization</label>
-                                <input type="text" class="form-control" id="org_resume" name="org_resume"
+                                <label for="resume_org">Name Organization</label>
+                                <input type="text" class="form-control" id="resume_org" name="resume_org"
                                     placeholder="Enter Organization">
                             </div>
                             <div class="form-group">
-                                <label for="desc_resume">Dsecription Resume</label>
-                                <input type="text" class="form-control" id="desc_resume" name="desc_resume"
+                                <label for="resume_desc">Dsecription Resume</label>
+                                <input type="text" class="form-control" id="resume_desc" name="resume_desc"
                                     placeholder="Enter Description">
                             </div>
                         </div>
