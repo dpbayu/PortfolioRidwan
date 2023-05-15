@@ -1,5 +1,10 @@
 <!-- PHP -->
 <?php
+session_start();
+if (!isset($_SESSION["login"])) {
+    header("Location: ../login.php");
+    exit;
+}
 require '../function.php';
 $page = 'resume';
 $sql_resume = "SELECT * FROM tbl_home, tbl_resume";

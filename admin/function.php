@@ -77,7 +77,7 @@ if (isset($_POST['addResume'])) {
 }
 // Add & Edit Resume End
 
-// Update Home Start
+// Update Contact Start
 if (isset($_POST['editContact'])) {
     $contact_address = mysqli_real_escape_string($db,$_POST['contact_address']);
     $contact_phone = mysqli_real_escape_string($db,$_POST['contact_phone']);
@@ -97,5 +97,45 @@ if (isset($_POST['editContact'])) {
         echo "<script>document.location.href = 'contact.php?success=Succesfully updated!';</script>";
     }
 }
-// Update Home End
+// Update Contact End
+
+// Update Contact Page Start
+if (isset($_POST['update-contact'])) {
+    $residence = mysqli_real_escape_string($db,$_POST['residence']);
+    $phone = mysqli_real_escape_string($db,$_POST['phone']);
+    $email = mysqli_real_escape_string($db,$_POST['email']);
+    $query = "UPDATE tbl_user SET residence = '$residence', phone = '$phone', email = '$email' WHERE id = 1";
+    $run = mysqli_query($db,$query);
+    if ($run) {
+        echo "<script>document.location.href = 'contact.php?success=Succesfully updated!';</script>";
+    }
+}
+// Update Contact Page End
+
+// Update Profile Start
+if (isset($_POST['editProfile'])) {
+    $username = mysqli_real_escape_string($db, $_POST['username']);
+    $password = mysqli_real_escape_string($db, $_POST['password']);
+    if (empty($username)) {
+        echo "Field still empty";
+    } else {
+            if (empty($password)) {
+                $sql = "UPDATE tbl_user SET username = '$username' WHERE id = 1";
+                if (mysqli_query($db, $sql)) {
+                    echo "<script>document.location.href = 'profile.php?success=Succesfully updated!';</script>";
+                } else {
+                    echo "Error";
+                }
+            } else {
+                $hash = password_hash($password, PASSWORD_DEFAULT);
+                $sql2 = "UPDATE tbl_user SET username = '$username', password = '$hash' WHERE id = 1";
+                if (mysqli_query($db, $sql2)) {
+                    echo "<script>document.location.href = 'profile.php?success=Password succesfully updated!';</script>";
+                } else {
+                echo "error";
+            }
+        }
+    }
+}
+// Update Profile End
 ?>

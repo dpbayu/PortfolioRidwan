@@ -1,5 +1,10 @@
 <!-- PHP -->
 <?php
+session_start();
+if (!isset($_SESSION["login"])) {
+    header("Location: ../login.php");
+    exit;
+}
 require '../function.php';
 $page = 'contact';
 $sql_contact = "SELECT * FROM tbl_contact";

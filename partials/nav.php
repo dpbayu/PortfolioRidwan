@@ -6,9 +6,9 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" aria-current="page" href="#">Home</a>
+                    <a class="nav-link page-scroll" href="#home">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#about">About</a>
@@ -18,6 +18,11 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#contact">Contact</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="login.php">Login</a>
                 </li>
             </ul>
         </div>

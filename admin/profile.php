@@ -6,10 +6,10 @@ if (!isset($_SESSION["login"])) {
     exit;
 }
 require '../function.php';
-$page = 'about';
-$sql_about = "SELECT * FROM tbl_about";
-$query_about = mysqli_query($db,$sql_about);
-$about = mysqli_fetch_array($query_about);
+$page = 'profile';
+$sql_profile = "SELECT * FROM tbl_user";
+$query_profile = mysqli_query($db,$sql_profile);
+$profile = mysqli_fetch_array($query_profile);
 ?>
 <!-- PHP -->
 <!DOCTYPE html>
@@ -37,7 +37,7 @@ $about = mysqli_fetch_array($query_about);
             <!-- Page Header Start -->
             <div class="content-header">
                 <div class="container-fluid">
-                    <h1 class="m-0">About</h1>
+                    <h1 class="m-0">Profile</h1>
                 </div>
             </div>
             <!-- Page Header End -->
@@ -62,36 +62,19 @@ $about = mysqli_fetch_array($query_about);
                             </div>';
                         }
                     ?>
-                    <form action="function.php" method="POST" enctype="multipart/form-data">
+                    <form class="pb-5" action="function.php" method="POST" enctype="multipart/form-data">
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="title">Title About</label>
-                                <input type="text" class="form-control" id="title" name="about_title"
-                                    placeholder="Enter title" value="<?= $about['about_title'] ?>">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username" name="username"
+                                    placeholder="Enter username" value="<?= $profile['username'] ?>">
                             </div>
                             <div class="form-group">
-                                <label for="desc">Description About</label>
-                                <input type="text" class="form-control" id="desc" name="about_desc"
-                                    placeholder="Enter description" value="<?= $about['about_desc'] ?>">
-                            </div>
-                            <div class="d-flex gap-5">
-                                <div class="form-group">
-                                    <div class="d-flex flex-column">
-                                        <label for="image">Image 1</label>
-                                        <img class="mb-3" src="../assets/img/<?= $about['about_img1'] ?>" width="500" height="300">
-                                        <input type="file" class="form-control" name="about_img1">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="d-flex flex-column">
-                                        <label for="image">Image 2</label>
-                                        <img class="mb-3" src="../assets/img/<?= $about['about_img2'] ?>" width="200">
-                                        <input type="file" class="form-control" name="about_img2">
-                                    </div>
-                                </div>
+                                <label class="form-label" for="password">Password</label>
+                                <input class="form-control" type="password" id="password" name="password">
                             </div>
                         </div>
-                        <button type="submit" name="editAbout" class="btn btn-primary">Edit</button>
+                        <button type="submit" name="editProfile" class="btn btn-primary">Update</button>
                     </form>
                 </div>
             </section>

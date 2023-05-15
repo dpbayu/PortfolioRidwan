@@ -1,5 +1,10 @@
 <!-- PHP -->
 <?php
+session_start();
+if (!isset($_SESSION["login"])) {
+    header("Location: ../login.php");
+    exit;
+}
 require '../function.php';
 $page = 'home';
 $sql_home = "SELECT * FROM tbl_home";
@@ -57,7 +62,7 @@ $home = mysqli_fetch_array($query_home);
                 </div>';
             }
           ?>
-          <form action="function.php" method="POST" enctype="multipart/form-data">
+          <form class="pb-5" action="function.php" method="POST" enctype="multipart/form-data">
             <div class="card-body">
               <div class="form-group">
                 <label for="title">Title</label>
