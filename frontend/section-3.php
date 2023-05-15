@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <!-- Freelance End -->
-                <img class="col-12 col-sm-4" src="assets/img/ridwan.jpg" alt="Photo About">
+                <img class="col-12 col-sm-4" src="assets/img/<?= $user['img_resume'] ?>" alt="Photo About">
             </div>
         </div>
     </div>

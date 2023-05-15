@@ -73,7 +73,8 @@ $about = mysqli_fetch_array($query_about);
                                 <div class="form-group">
                                     <div class="d-flex flex-column">
                                         <label for="image">Image 1</label>
-                                        <img class="mb-3" src="../assets/img/<?= $about['about_img1'] ?>" width="500" height="300">
+                                        <img class="mb-3" src="../assets/img/<?= $about['about_img1'] ?>" width="500"
+                                            height="300">
                                         <input type="file" class="form-control" name="about_img1">
                                     </div>
                                 </div>

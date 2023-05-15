@@ -21,6 +21,7 @@ if (isset($_POST['editHome'])) {
     }
 }
 // Update Home End
+
 // Update About Start
 if (isset($_POST['editAbout'])) {
     $about_title = mysqli_real_escape_string($db,$_POST['about_title']);
@@ -50,4 +51,20 @@ if (isset($_POST['editAbout'])) {
     }
 }
 // Update About End
+
+// Add & Edit Resume Start
+if (isset($_POST['addResume'])) {
+    $type_resume = trim(mysqli_real_escape_string($db, $_POST['type_resume']));
+    $org_resume = trim(mysqli_real_escape_string($db, $_POST['org_resume']));
+    $desc_resume = trim(mysqli_real_escape_string($db, $_POST['desc_resume']));
+    mysqli_query($db, "INSERT INTO tbl_resume (id, type_resume, org_resume, desc_resume) VALUES ('', '$type_resume', '$org_resume', '$desc_resume')");
+        echo "<script>window.location='resume.php?success=Data successfuly added!';</script>";
+} else if (isset($_POST['editResume'])) {
+    $id = $_POST['id'];
+    $org_resume = trim(mysqli_real_escape_string($db, $_POST['org_resume']));
+    $desc_resume = trim(mysqli_real_escape_string($db, $_POST['desc_resume']));
+    mysqli_query($db, "UPDATE tbl_resume SET org_resume = '$org_resume', desc_resume = '$desc_resume' WHERE id = '$id'");
+    echo "<script>window.location='resume.php?success=Data successfuly updated!';</script>";
+}
+// Add & Edit Resume End
 ?>

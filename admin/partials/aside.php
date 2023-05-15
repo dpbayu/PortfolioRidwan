@@ -31,6 +31,12 @@
                         <p>About</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="resume.php" class="nav-link <?php if ($page == 'resume'){ echo 'active'; } ?>">
+                        <i class="nav-icon fas fa-briefcase"></i>
+                        <p>Resume</p>
+                    </a>
+                </li>
                 <li class="nav-header">EXAMPLES</li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">

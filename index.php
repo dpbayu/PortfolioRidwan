@@ -1,7 +1,7 @@
 <!-- PHP -->
 <?php
     require 'function.php';
-    $query = "SELECT * FROM tbl_home, tbl_about, tbl_contact";
+    $query = "SELECT * FROM tbl_home, tbl_about, tbl_resume, tbl_contact";
     $run = mysqli_query($db,$query);
     $user = mysqli_fetch_array($run);
 ?>
