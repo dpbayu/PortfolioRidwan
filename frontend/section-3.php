@@ -24,7 +24,7 @@
                             <li>
                                 <div>
                                     <h6 class="text mb-1"><?= $fulltime['resume_org'] ?></h6>
-                                    <p><?= $fulltime['resume_desc'] ?></p>
+                                    <?= $fulltime['resume_desc'] ?>
                                 </div>
                             </li>
                             <?php
@@ -49,7 +49,7 @@
                             <li>
                                 <div>
                                     <h6 class="text mb-1"><?= $freelance['resume_org'] ?></h6>
-                                    <p><?= $freelance['resume_desc'] ?></p>
+                                    <?= $freelance['resume_desc'] ?>
                                 </div>
                             </li>
                             <?php

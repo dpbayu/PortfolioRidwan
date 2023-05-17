@@ -71,8 +71,8 @@ $about = mysqli_fetch_array($query_about);
                             </div>
                             <div class="form-group">
                                 <label for="desc">Description About</label>
-                                <input type="text" class="form-control" id="desc" name="about_desc"
-                                    placeholder="Enter description" value="<?= $about['about_desc'] ?>">
+                                <textarea class="form-control" id="desc" name="about_desc"
+                                    placeholder="Enter description"><?= $about['about_desc'] ?></textarea>
                             </div>
                             <div class="d-flex gap-5">
                                 <div class="form-group">
