@@ -88,6 +88,20 @@ $home = mysqli_fetch_array($query_home);
                   <input type="file" class="form-control" name="resume_img">
                 </div>
               </div>
+              <div class="form-group">
+                <div class="d-flex flex-column">
+                  <label for="image">Image Section 5</label>
+                  <img class="mb-3" src="../assets/img/<?= $home['section5_img1'] ?>" width="200">
+                  <input type="file" class="form-control" name="section5_img1">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="d-flex flex-column">
+                  <label for="image">Image Section 5</label>
+                  <img class="mb-3" src="../assets/img/<?= $home['section5_img2'] ?>" width="200">
+                  <input type="file" class="form-control" name="section5_img2">
+                </div>
+              </div>
               <button type="submit" name="editHome" class="btn btn-primary">Update Home</button>
             </div>
           </form>
