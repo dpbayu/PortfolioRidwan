@@ -77,7 +77,7 @@ $resume = mysqli_fetch_array($query_resume);
                                     <li>
                                         <div>
                                             <h6 class="text mb-1"><?= $fulltime['resume_org'] ?></h6>
-                                            <p><?= $fulltime['resume_desc'] ?></p>
+                                            <?= $fulltime['resume_desc'] ?>
                                             <button type="button" class="btn btn-warning" data-bs-toggle="modal"
                                                 data-bs-target="#editFulltime<?= $fulltime['id'] ?>">
                                                 Edit
@@ -118,9 +118,9 @@ $resume = mysqli_fetch_array($query_resume);
                                                             <div class="form-group mb-3 w-100">
                                                                 <label class="form-label" for="resume_desc">Description
                                                                     Resume</label>
-                                                                <input class="form-control" type="text" id="resume_desc"
-                                                                    name="resume_desc" placeholder="Description Resume"
-                                                                    value="<?= $fulltime['resume_desc'] ?>">
+                                                                <textarea class="form-control" id="resume_desc"
+                                                                    name="resume_desc"
+                                                                    placeholder="Description Resume"><?= $fulltime['resume_desc'] ?></textarea>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -149,15 +149,15 @@ $resume = mysqli_fetch_array($query_resume);
                                 <h5 class="fw-800 fs-3">Kerja Lepas</h5>
                                 <ul>
                                     <?php 
-                                $sql_freelance = "SELECT * FROM tbl_resume";
-                                $query_freelance = mysqli_query($db,$sql_freelance);
-                                while ($freelance = mysqli_fetch_array($query_freelance)) {
-                                if ($freelance['resume_type'] == 'fr') {
+                                        $sql_freelance = "SELECT * FROM tbl_resume";
+                                        $query_freelance = mysqli_query($db,$sql_freelance);
+                                        while ($freelance = mysqli_fetch_array($query_freelance)) {
+                                        if ($freelance['resume_type'] == 'fr') {
                                     ?>
                                     <li>
                                         <div>
                                             <h6 class="text mb-1"><?= $freelance['resume_org'] ?></h6>
-                                            <p><?= $freelance['resume_desc'] ?></p>
+                                            <?= $freelance['resume_desc'] ?>
                                             <button type="button" class="btn btn-warning" data-bs-toggle="modal"
                                                 data-bs-target="#editFreelance<?= $freelance['id'] ?>">
                                                 Edit
@@ -198,9 +198,9 @@ $resume = mysqli_fetch_array($query_resume);
                                                             <div class="form-group mb-3 w-100">
                                                                 <label class="form-label" for="resume_desc">Description
                                                                     Resume</label>
-                                                                <input class="form-control" type="text" id="resume_desc"
-                                                                    name="resume_desc" placeholder="Description Resume"
-                                                                    value="<?= $freelance['resume_desc'] ?>">
+                                                                <textarea class="form-control" id="resume_desc"
+                                                                    name="resume_desc"
+                                                                    placeholder="Description Resume"><?= $freelance['resume_desc'] ?></textarea>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -240,12 +240,12 @@ $resume = mysqli_fetch_array($query_resume);
                                     placeholder="Enter Organization">
                             </div>
                             <div class="form-group">
-                                <label for="resume_desc">Dsecription Resume</label>
-                                <input type="text" class="form-control" id="resume_desc" name="resume_desc"
-                                    placeholder="Enter Description">
+                                <label for="resume_desc">Description Resume</label>
+                                <textarea class="form-control" id="resume_desc" name="resume_desc"
+                                    placeholder="Enter Description"></textarea>
                             </div>
+                            <button type="submit" name="addResume" class="btn btn-primary">Add Resume</button>
                         </div>
-                        <button type="submit" name="addResume" class="btn btn-primary">Add</button>
                     </form>
                     <!-- Add Resume End -->
                 </div>

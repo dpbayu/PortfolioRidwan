@@ -23,7 +23,25 @@ if (isset($_POST['editHome'])) {
         $resume_img = $fetch_resume['resume_img'];
     }
     move_uploaded_file($imgtemp,"../assets/img/$resume_img");
-    $query = "UPDATE tbl_home SET home_title = '$home_title', home_name = '$home_name', home_img = '$home_img', resume_img = '$resume_img' WHERE id = 1";
+    $section5_img1 = $_FILES['section5_img1']['name'];
+    $imgtemp = $_FILES['section5_img1']['tmp_name'];
+    if ($imgtemp == '') {
+        $sql_resume = "SELECT * FROM tbl_home WHERE 1";
+        $query_resume = mysqli_query($db,$sql_resume);
+        $fetch_resume = mysqli_fetch_array($query_resume);
+        $section5_img1 = $fetch_resume['section5_img1'];
+    }
+    move_uploaded_file($imgtemp,"../assets/img/$section5_img1");
+    $section5_img2 = $_FILES['section5_img2']['name'];
+    $imgtemp = $_FILES['section5_img2']['tmp_name'];
+    if ($imgtemp == '') {
+        $sql_resume = "SELECT * FROM tbl_home WHERE 1";
+        $query_resume = mysqli_query($db,$sql_resume);
+        $fetch_resume = mysqli_fetch_array($query_resume);
+        $section5_img2 = $fetch_resume['section5_img2'];
+    }
+    move_uploaded_file($imgtemp,"../assets/img/$section5_img2");
+    $query = "UPDATE tbl_home SET home_title = '$home_title', home_name = '$home_name', home_img = '$home_img', resume_img = '$resume_img', section5_img1 = '$section5_img1', section5_img2 = '$section5_img2' WHERE id = 1";
     $run = mysqli_query($db,$query);
     if ($run) {
         echo "<script>document.location.href = 'index.php?success=Succesfully updated!';</script>";

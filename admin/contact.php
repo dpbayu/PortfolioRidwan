@@ -86,8 +86,8 @@ $contact = mysqli_fetch_array($query_contact);
                                     <input type="file" class="form-control" name="contact_img">
                                 </div>
                             </div>
+                            <button type="submit" name="editContact" class="btn btn-primary">Update Contact</button>
                         </div>
-                        <button type="submit" name="editContact" class="btn btn-primary">Edit</button>
                     </form>
                 </div>
             </section>
