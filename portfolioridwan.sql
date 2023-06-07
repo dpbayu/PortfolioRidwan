@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 15, 2023 at 05:01 PM
+-- Generation Time: May 17, 2023 at 05:17 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -105,7 +105,8 @@ INSERT INTO `tbl_resume` (`id`, `resume_type`, `resume_org`, `resume_desc`) VALU
 (1, 'ft', 'Ganesha', '- Pimpinan Kreatif (2020-2022)</br>\n- Pengarah Seni (2018-2020)'),
 (2, 'fr', 'ILUSTRATOR PURNAWAKTU </br> (2022-SEKARANG)', ''),
 (3, 'fr', 'BUMN', 'Service cleaning'),
-(4, 'ft', 'Mercu Buana', 'Teacher English');
+(4, 'ft', 'Mercu Buana', 'Teacher English'),
+(8, 'fr', 'sadasd', 'sdasa');
 
 -- --------------------------------------------------------
 
@@ -186,7 +187,7 @@ ALTER TABLE `tbl_home`
 -- AUTO_INCREMENT for table `tbl_resume`
 --
 ALTER TABLE `tbl_resume`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`
